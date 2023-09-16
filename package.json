@@ -13,8 +13,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint \"src/**/*.{tsx,ts,jsx,js}\"",
+    "lint:fix": "eslint \"src/**/*.{tsx,ts,jsx,js}\" --fix",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "prepare": "husky install",
     "pre-commit": "tsc --noEmit --pretty && lint-staged"
@@ -46,9 +46,9 @@
     "typescript": "5.2.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "pnpm lint",
-      "pnpm format"
+    "**/*.{ts,tsx,js,jsx}": [
+      "pnpm format",
+      "pnpm lint"
     ]
   }
 }
