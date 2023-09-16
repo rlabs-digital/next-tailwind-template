@@ -1,0 +1,40 @@
+# Top-most EditorConfig file
+root = true
+
+# Default settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript and TypeScript files
+[*.js]
+[*.ts]
+[*.tsx]
+
+# Use 2 spaces for indentation
+indent_style = space
+indent_size = 2
+
+# Ensure consistent line endings (LF)
+end_of_line = lf
+
+# Use single quotes for strings
+quote_type = single
+
+# Maximum line length before wrapping (Prettier's printWidth)
+max_line_length = 72
+
+# Add a trailing comma wherever possible (Prettier's trailingComma)
+insert_final_comma = true
+
+# Enforce semicolons at the end of statements (Prettier's semi)
+require_semi = true
+
+# TypeScript JSX files
+[*.tsx]
+
+
+# Ignore ESLint configuration files
+[.eslintignore]
