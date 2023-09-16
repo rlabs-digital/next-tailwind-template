@@ -1,0 +1,7 @@
+# Ignore generated or build files
+node_modules/
+build/
+dist/
+public/
+
+
