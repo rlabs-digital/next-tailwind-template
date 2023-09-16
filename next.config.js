@@ -1,8 +1,15 @@
-/** @type {import('next').NextConfig} */
-module.exports = {
-  // Your Next.js configuration options go here
+const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withPlugins = require('next-compose-plugins');
 
-  // Enable trailing slashes for SEO-friendly URLs
+/** @type {import('next').NextConfig} */
+module.exports = {};
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = withPlugins([[withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })]], {
+  reactStrictMode: true,
+  experimental: { instrumentationHook: true },
   trailingSlash: true,
 
   // Add custom webpack configurations if needed
@@ -38,4 +45,6 @@ module.exports = {
       },
     ];
   },
-};
+});
+
+module.exports = config;
